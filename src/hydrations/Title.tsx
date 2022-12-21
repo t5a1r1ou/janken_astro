@@ -6,7 +6,7 @@ const Title: FC = () => {
   const snap = useSnapshot(state);
   const { ready } = snap;
   return (
-    <p className="card__title">{`${ready ? "じゃんけん..." : "ぽんっ！"}`}</p>
+    <p className="card__title">{`${ready ? "じゃんけん..." : "ぽんっっ！"}`}</p>
   );
 };
 
