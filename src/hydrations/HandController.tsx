@@ -18,7 +18,7 @@ const HandController: FC<Props> = (props) => {
     <>
       <div className={`cardBox__imgContainer ${hand}`}>{children}</div>
       <p className="cardBox__hand">
-        {hand === "thinking" ? "かんがえちゅう..." : null}
+        {hand === "thinking" ? "かんがえ中..." : null}
         {hand === "rock" ? "グー" : null}
         {hand === "scissors" ? "チョキ" : null}
         {hand === "paper" ? "パー" : null}
