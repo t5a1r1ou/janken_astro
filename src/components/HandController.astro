@@ -1,0 +1,36 @@
+---
+import { Image } from "@astrojs/image/components";
+import HandController from "../hydrations/HandController";
+import thinkingImage from "../assets/images/thinking.png";
+import rockImage from "../assets/images/rock.png";
+import scissorsImage from "../assets/images/scissors.png";
+import paperImage from "../assets/images/paper.png";
+
+const images = [thinkingImage, rockImage, scissorsImage, paperImage];
+const imageLabels = ["thinking", "rock", "scissors", "paper"];
+
+const { playerType } = Astro.props;
+---
+
+<div class="cardBox">
+  <p
+    class={`cardBox__title ${
+      playerType === "you" ? "cardBox__title--you" : "cardBox__title--cpu"
+    }`}
+  >
+    {playerType === "you" ? "あなた" : "CPU"}
+  </p>
+
+  <HandController client:load type={playerType} client:load>
+    {
+      images.map((image, i) => (
+        <Image
+          class="cardBox__img"
+          data-hand={imageLabels[i]}
+          src={image}
+          alt=""
+        />
+      ))
+    }
+  </HandController>
+</div>

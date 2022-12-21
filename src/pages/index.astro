@@ -1,0 +1,31 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import Title from "../hydrations/Title";
+import Result from "../hydrations/Result";
+import HandController from "../components/HandController.astro";
+import ButtonList from "../components/ButtonList.astro";
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <main class="contents__wrapper">
+      <h1 class="contents__title">じゃんけんゲーム</h1>
+      <div class="cardsContainer">
+        <div class="card">
+          <Title client:load />
+          <div class="card__wrapper">
+            <HandController playerType="you" />
+            <HandController playerType="cpu" />
+          </div>
+          <Result client:load />
+        </div>
+      </div>
+      <ButtonList />
+    </main>
+  </body>
+</html>

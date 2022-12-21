@@ -1,0 +1,24 @@
+---
+import ButtonList from "../hydrations/ButtonList";
+import StartButton from "../hydrations/StartButton";
+import RestartButton from "../hydrations/RestartButton";
+---
+
+<ButtonList client:load>
+  <ul class="navigation__list" data-type="start">
+    <li>
+      <StartButton handType="rock" client:load />
+    </li>
+    <li>
+      <StartButton handType="scissors" client:load />
+    </li>
+    <li>
+      <StartButton handType="paper" client:load />
+    </li>
+  </ul>
+  <ul class="navigation__list" data-type="restart">
+    <li>
+      <RestartButton client:load />
+    </li>
+  </ul>
+</ButtonList>
